@@ -9,8 +9,8 @@
           register: result
           ignore_errors: yes
 
-  - name: Start Filezilla Service
-    win_service:
-     name: filezilla-server
-     start_mode: manual
-     state: started
+     - name: Start Filezilla Service
+       win_service:
+         name: filezilla-server
+         start_mode: manual
+         state: started
