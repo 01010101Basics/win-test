@@ -6,3 +6,7 @@
          name: filezilla-server
        register: result
        ignore_errors: yes
+     - name: Ensure that Filezilla is set to Manual Start
+       win_service:
+         name: WinRM
+         start_mode: manual
