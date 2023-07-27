@@ -8,5 +8,5 @@
        ignore_errors: yes
      - name: Ensure that Filezilla is set to Manual Start
        win_service:
-         name: WinRM
+         name: filezilla-server
          start_mode: manual
