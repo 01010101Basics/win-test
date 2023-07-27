@@ -1,14 +1,8 @@
----
+ ---
 - hosts: all
   tasks:
-    - name: check services
+     - name: check services
       win_service:
-        name: filezilla-server
-        register: result
-        ignore_errors: yes
-       
-     - name: Start Filezilla Service
-       win_service:
-         name: filezilla-server
-         start_mode: manual
-         state: started
+          name: filezilla-server
+      register: result
+      ignore_errors: yes
