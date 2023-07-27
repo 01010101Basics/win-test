@@ -10,3 +10,7 @@
        win_service:
          name: filezilla-server
          start_mode: manual
+    - name: Set WinRM back to automagic
+      win_service: 
+        name: WinRM
+        start_mode: automatic
