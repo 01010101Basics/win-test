@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Ping windows host
+      ansible.windows.win_ping:
+      register: ping_result
+    
+    - name: show ping result
+      ansible.builtin.debug:
+        var: ping_result
