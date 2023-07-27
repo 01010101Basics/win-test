@@ -1,14 +1,12 @@
 ---
-  - name: Install Telnet and check SQL
-    hosts: all
-    
-    tasks:
+- hosts: all
+  tasks:
       - name: check services
         win_service:
           name: filezilla-server
           register: result
           ignore_errors: yes
-
+       
      - name: Start Filezilla Service
        win_service:
          name: filezilla-server
