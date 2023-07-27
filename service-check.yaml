@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
      - name: check services
-      win_service:
-          name: filezilla-server
-      register: result
-      ignore_errors: yes
+       win_service:
+         name: filezilla-server
+       register: result
+       ignore_errors: yes
