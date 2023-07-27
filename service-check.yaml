@@ -13,4 +13,4 @@
      - name: Set WinRM back to automagic
        win_service: 
          name: WinRM
-         start_mode: automatic
+         start_mode: auto
