@@ -3,7 +3,7 @@
 
   tasks:
     extra_vars:
-      ansible_password: "{{ psuser_pass }}"
+    ansible_password: "{{ psuser_pass }}"
   - name: Single line PowerShell
     win_shell: Set-Content -Path C:\temp\test.txt -Value 'Hello there. '
 
