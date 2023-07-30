@@ -1,10 +1,8 @@
 ---
 - hosts: all
-
+  ansible_password: "{{ psuser_pass }}"
   tasks:
   - name: Single line PowerShell
-    extra_vars:
-    ansible_password: "{{ psuser_pass }}"
     win_shell: Set-Content -Path C:\temp\test.txt -Value 'Hello there. '
 
   - name: Run multi-lined shell commands
