@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  extra_vars:
+  ansible_password: "{{ psuser_pass }}"
   tasks:
 
   - name: Single line PowerShell
