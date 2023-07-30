@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  ansible_password: "{{ psuser_pass }}"
   tasks:
   - name: Single line PowerShell
     win_shell: Set-Content -Path C:\temp\test.txt -Value 'Hello there. '
