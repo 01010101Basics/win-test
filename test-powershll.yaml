@@ -14,7 +14,8 @@
       src: "{{ playbook_dir }}/files/test.ps1"
       dest: C:\Temp\test.ps1
       register: results
-  - debug: msg="{{ results.stdout }}"
+  - debug: 
+    var: results.stdout_lines
 
   - name: Run a script
     win_shell: C:\temp\test.ps1
