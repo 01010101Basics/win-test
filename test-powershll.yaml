@@ -10,7 +10,7 @@
         $text += ' General Kenobi....you are a bold one'
         Set-Content -Path C:\Temp\test2.txt -Value $text
     register: cmdresult
-  - debug: var=cmdresult.stdout_lines
+  - debug: var=cmdresult.stdout
 
   - name: Copy a single file
     win_copy:
