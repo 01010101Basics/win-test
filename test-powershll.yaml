@@ -9,9 +9,8 @@
         $text = Get-Content C:\Temp\test.txt
         $text += ' General Kenobi....you are a bold one'
         Set-Content -Path C:\Temp\test2.txt -Value $text
-    register: results
-  
-  - debug: var=results.stdout_lines
+    register: cmdresult
+  - debug: var=cmdresult.stdout_lines
 
   - name: Copy a single file
     win_copy:
