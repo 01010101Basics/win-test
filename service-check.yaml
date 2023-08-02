@@ -1,15 +1,15 @@
 ---
 - hosts: all
   tasks:
-     - name: check services
-       win_service:
-         name: filezilla-server
-       register: result
-       ignore_errors: yes
-     - name: Ensure that Filezilla is set to Manual Start
-       win_service:
-         name: filezilla-server
-         start_mode: manual
+     #- name: check services
+     #  win_service:
+     #    name: filezilla-server
+     #  register: result
+     #  ignore_errors: yes
+    # - name: Ensure that Filezilla is set to Manual Start
+    #   win_service:
+    #     name: filezilla-server
+    #     start_mode: manual
      - name: Set WinRM back to automagic
        win_service: 
          name: WinRM
