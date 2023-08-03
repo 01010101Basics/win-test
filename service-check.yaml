@@ -12,20 +12,21 @@
     - name: show the output of DHCP check service  
       debug: var=result
        
-  #   - name: Ensure that Dhcp is set to auto Start
-  #     win_service:
-  #       name: Dhcp
-  #     start_mode: auto
-  #     register: result1
+   - name: Ensure that Dhcp is set to auto Start
+     win_service:
+       name: Dhcp
+       start_mode: auto
+       state: started
+     register: result1
        
-    # - name: show the output of Dhcp set to auto  
-    #   debug: var= result1
+    - name: show the output of Dhcp set to auto  
+      debug: var= result1
        
-  #   - name: Set WinRM to automagic
-  #     win_service: 
-  #       name: WinRM
-  #       start_mode: auto
-  #     register: result2
+    - name: Set WinRM to automagic
+      win_service: 
+        name: WinRM
+        start_mode: auto
+      register: result2
 
-     #- name: show the output of WinRM set to auto  
-     #  debug: var=result2
+    - name: show the output of WinRM set to auto  
+      debug: var=result2
