@@ -1,26 +1,26 @@
 ---
 - hosts: all
   tasks:
-    - name: check services
-      win_service:
-        name: Dhcp
-      register: result
-      ignore_errors: yes
-      debug:
-      var: result.stdout_lines
+     - name: check services
+       win_service:
+         name: Dhcp
+       register: result
+       ignore_errors: yes
+       debug:
+       var: result.stdout_lines
        
-    - name: Ensure that Dhcp is set to Manual Start
-      win_service:
-        name: Dhcp
-      start_mode: auto
-      register: result1
-      debug:
-      var: result1.stdout_lines
+     - name: Ensure that Dhcp is set to Manual Start
+       win_service:
+         name: Dhcp
+       start_mode: auto
+       register: result1
+       debug:
+       var: result1.stdout_lines
        
-    - name: Set WinRM to automagic
-      win_service: 
-        name: WinRM
-        start_mode: auto
-      register: result2
-      debug:
-      var: result2.stdout_lines
+     - name: Set WinRM to automagic
+       win_service: 
+         name: WinRM
+         start_mode: auto
+       register: result2
+       debug:
+       var: result2.stdout_lines
