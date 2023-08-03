@@ -12,12 +12,12 @@
     - name: show the output of DHCP check service  
       debug: var=result
        
-   - name: Ensure that Dhcp is set to auto Start
-     win_service:
-       name: Dhcp
-       start_mode: auto
-       state: started
-     register: result1
+    - name: Ensure that Dhcp is set to auto Start
+      win_service:
+        name: Dhcp
+        start_mode: auto
+        state: started
+      register: result1
        
     - name: show the output of Dhcp set to auto  
       debug: var= result1
