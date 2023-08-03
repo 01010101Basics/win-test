@@ -6,13 +6,17 @@
          name: Dhcp
        register: result
        ignore_errors: yes
+       
+     - name: show output of DHCP check service  
        debug: var=result
        
-     - name: Ensure that Dhcp is set to Manual Start
+     - name: Ensure that Dhcp is set to auto Start
        win_service:
          name: Dhcp
        start_mode: auto
        register: result1
+       
+     - name: show output of Dhcp set to auto  
        debug: var= result1
        
      - name: Set WinRM to automagic
@@ -20,4 +24,6 @@
          name: WinRM
          start_mode: auto
        register: result2
+
+     - name: show output of WinRM set to auto  
        debug: var=result2
