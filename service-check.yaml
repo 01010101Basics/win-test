@@ -28,6 +28,8 @@
         name: WinRM
         start_mode: auto
       register: result2
+      ignore_errors: yes
 
+      
     - name: show the output of WinRM set to auto  
       debug: var=result2
