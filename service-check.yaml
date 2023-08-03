@@ -7,7 +7,7 @@
        register: result
        ignore_errors: yes
        debug:
-       var: result.stdout_lines
+       var=result
        
      - name: Ensure that Dhcp is set to Manual Start
        win_service:
@@ -15,7 +15,7 @@
        start_mode: auto
        register: result1
        debug:
-       var: result1.stdout_lines
+       var= result1
        
      - name: Set WinRM to automagic
        win_service: 
@@ -23,4 +23,4 @@
          start_mode: auto
        register: result2
        debug:
-       var: result2.stdout_lines
+       var=result2
