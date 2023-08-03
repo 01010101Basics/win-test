@@ -20,6 +20,9 @@
       register: result1
       ignore_errors: yes
 
+    - name: show the output of Spoler set to auto  
+      debug: var=result1
+
        
     - name: Set WinRM to automagic
       win_service: 
