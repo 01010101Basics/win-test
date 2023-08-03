@@ -12,14 +12,14 @@
     - name: show the output of DHCP check service  
       debug: var=result
        
-    - name: Ensure that Dhcp is set to auto Start
+    - name: Ensure that Spooler is set to auto Start
       win_service:
-        name: Dhcp
+        name: Spooler
         start_mode: auto
         state: started
       register: result1
        
-    - name: show the output of Dhcp set to auto  
+    - name: show the output of Spooler set to auto  
       debug: var= result1
        
     - name: Set WinRM to automagic
