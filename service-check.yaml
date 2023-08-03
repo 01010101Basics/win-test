@@ -9,8 +9,8 @@
       register: result
       ignore_errors: yes
        
-   - name: show the output of DHCP check service  
-     debug: var=result
+    - name: show the output of DHCP check service  
+      debug: var=result
        
   #   - name: Ensure that Dhcp is set to auto Start
   #     win_service:
