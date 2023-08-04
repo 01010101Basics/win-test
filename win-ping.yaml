@@ -11,8 +11,8 @@
       ansible.builtin.debug:
         var: ping_result
 
-    - name: Email report of systems with read only filesystems
-      mail:
+   
+    - mail:
         host: 172.18.246.145
         port: 25
         to: Ken Goddard <Ken.Goddard@avmc.org>
