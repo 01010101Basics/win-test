@@ -8,3 +8,27 @@
     - name: show ping result
       ansible.builtin.debug:
         var: ping_result
+
+   - name: email report
+     hosts: localhost
+     gather_facts: false
+     tasks:
+     - name: Email report of systems with read only filesystems
+       mail:
+         host: 172.18.246.145
+         port: 25
+         to: Ken Goddard <Ken.Goddard@avmc.org>
+         from: Scripts <scripts@avmc.org>
+         subject: "[Ping Result] Hosts"
+         body: |
+           Report to Check Host Alive Heartbeats.
+
+           {% for host_item in lookup('inventory_hostnames', hosts_pattern, wantlist=True) %}
+           {% if hostvars[host_item]['ping_result'] is defined and
+              hostvars[host_item]['ping_result'].stdout is defined and
+              hostvars[host_item]['ping_result'].stdout == "success" %}
+           Succeeded - {{ hostvars[host_item]['inventory_hostname'] }} aka {{ hostvars[host_item]['host_name'].stdout }}
+           {% else %}
+           Failed - {{ hostvars[host_item]['inventory_hostname'] }} aka {{ hostvars[host_item]['host_name'].stdout }}
+           {% endif %}
+           {% endfor %}
