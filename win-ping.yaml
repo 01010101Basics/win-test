@@ -9,7 +9,7 @@
     - name: show ping result
       ansible.builtin.debug:
         var: ping_result
-        
+---        
 - name: email report
   hosts: localhost
   gather_facts: false
