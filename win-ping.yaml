@@ -1,6 +1,6 @@
 ---
 - name: Ping all hosts
-- hosts: all
+  hosts: all
   gather_facts: false
   tasks:
     - name: Ping windows host
